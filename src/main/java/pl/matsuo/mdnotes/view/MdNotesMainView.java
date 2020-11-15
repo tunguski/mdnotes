@@ -1,9 +1,11 @@
 package pl.matsuo.mdnotes.view;
 
 import static j2html.TagCreator.attrs;
+import static j2html.TagCreator.b;
 import static j2html.TagCreator.div;
-import static j2html.TagCreator.h1;
+import static j2html.TagCreator.li;
 import static j2html.TagCreator.text;
+import static j2html.TagCreator.ul;
 
 import j2html.tags.ContainerTag;
 import lombok.RequiredArgsConstructor;
@@ -24,11 +26,25 @@ public class MdNotesMainView implements IView<IRequest, MdNotesModel> {
   @Override
   public ContainerTag view(IRequest request, MdNotesModel model) {
     return viewComponents.pageTemplate(
-        "Kafka instance selection",
-        viewComponents.rowCol(h1("Header")),
+        "Markdown Notes",
         div(
             attrs(".row"),
-            div(attrs(".col-3.border-right.bg-light"), text("bla bla")),
-            div(attrs(".col-9"), text("bla bla"))));
+            div(
+                attrs(".col-2.border-right.bg-light"),
+                ul(
+                    attrs(".list-unstyled"),
+                    li("one"),
+                    li("two"),
+                    li("three"),
+                    li("four"),
+                    li(
+                        b("folder"),
+                        ul(
+                            attrs(".list-unstyled"),
+                            li("one"),
+                            li("two"),
+                            li("three"),
+                            li("four"))))),
+            div(attrs(".col-10"), text("bla bla"))));
   }
 }

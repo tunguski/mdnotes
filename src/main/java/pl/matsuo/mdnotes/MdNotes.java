@@ -1,5 +1,7 @@
 package pl.matsuo.mdnotes;
 
+import static pl.matsuo.core.util.desktop.component.ViewComponents.loadResource;
+
 import java.util.HashMap;
 import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +18,8 @@ import pl.matsuo.mdnotes.view.MdNotesMainView;
 @Slf4j
 public class MdNotes extends DesktopUI<MdNotesModel> {
 
+  public static final String mdNotesCss = loadResource(MdNotes.class, "/css/mdnotes.css");
+
   public MdNotes() {
     super(desktopUiConfig());
   }
@@ -28,7 +32,7 @@ public class MdNotes extends DesktopUI<MdNotesModel> {
   private static Map<String, IView<IRequest, MdNotesModel>> views() {
     Map<String, IView<IRequest, MdNotesModel>> views = new HashMap<>();
 
-    ViewComponents viewComponents = new ViewComponents();
+    ViewComponents viewComponents = new ViewComponents(mdNotesCss);
     FormComponents formComponents = new FormComponents();
 
     views.put("/", new MdNotesMainView(viewComponents, formComponents));
