@@ -8,6 +8,38 @@ html, body {
     height: 100%;
 }
 
-li > ul {
+.container-fluid > .row > * {
+    padding-top: 1em;
+}
+
+li > ul, li > ol {
     margin-left: 0.5em;
+}
+
+.left-bar {
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+}
+
+.file-listing ol {
+    transition-duration: 500ms;
+    color: #999;
+}
+
+.file-listing:hover ol {
+    color: inherit;
+}
+
+.toolbar {
+    font-size: 1.3em;
+    color: #666;
+}
+
+textarea {
+    border: 0;
+    height: 100%;
+    width: 100%;
+    resize: none;
+    outline: none;
 }
