@@ -1,11 +1,17 @@
 package pl.matsuo.mdnotes.model;
 
-import java.util.SortedMap;
-import java.util.TreeMap;
 import lombok.Data;
 
 @Data
 public class MdNotesModel {
 
-  final SortedMap<String, String> files = new TreeMap<>();
+  Folder root = new Folder();
+
+  public MdNotesModel() {
+    root.getFolders().put("test", new Folder());
+    root.getFolders().get("test").getFiles().put("test-one", "content!");
+    root.getFolders().get("test").getFiles().put("test-two", "content! two!");
+    root.getFiles().put("test-one", "content!");
+    root.getFiles().put("test-two", "content! two!");
+  }
 }

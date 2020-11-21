@@ -12,8 +12,15 @@ import pl.matsuo.core.util.desktop.IRequest;
 import pl.matsuo.core.util.desktop.IView;
 import pl.matsuo.core.util.desktop.component.FormComponents;
 import pl.matsuo.core.util.desktop.component.ViewComponents;
+import pl.matsuo.mdnotes.action.AddFileAction;
+import pl.matsuo.mdnotes.action.AddFolderAction;
+import pl.matsuo.mdnotes.action.RenameFileAction;
+import pl.matsuo.mdnotes.action.RenameFolderAction;
+import pl.matsuo.mdnotes.action.ToggleFolderAction;
+import pl.matsuo.mdnotes.component.ViewTemplate;
 import pl.matsuo.mdnotes.model.MdNotesModel;
 import pl.matsuo.mdnotes.view.MdNotesMainView;
+import pl.matsuo.mdnotes.view.NoPageFoundView;
 
 @Slf4j
 public class MdNotes extends DesktopUI<MdNotesModel> {
@@ -34,14 +41,22 @@ public class MdNotes extends DesktopUI<MdNotesModel> {
 
     ViewComponents viewComponents = new ViewComponents(mdNotesCss);
     FormComponents formComponents = new FormComponents();
+    ViewTemplate viewTemplate = new ViewTemplate(viewComponents, formComponents);
 
-    views.put("/", new MdNotesMainView(viewComponents, formComponents));
+    views.put("/", new MdNotesMainView(viewTemplate));
+    views.put("/404", new NoPageFoundView(viewTemplate));
 
     return views;
   }
 
   private static Map<String, IActionController<IRequest, MdNotesModel>> controllers() {
     Map<String, IActionController<IRequest, MdNotesModel>> controllerMap = new HashMap<>();
+
+    controllerMap.put("/files/add", new AddFileAction());
+    controllerMap.put("/folders/add", new AddFolderAction());
+    controllerMap.put("/files/rename", new RenameFileAction());
+    controllerMap.put("/folders/rename", new RenameFolderAction());
+    controllerMap.put("/folders/toggle", new ToggleFolderAction());
 
     return controllerMap;
   }

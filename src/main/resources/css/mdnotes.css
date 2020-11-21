@@ -22,12 +22,21 @@ li > ul, li > ol {
     display: flex;
 }
 
-.file-listing ol {
+.file-listing > ol {
     transition-duration: 500ms;
     color: #999;
 }
 
-.file-listing:hover ol {
+.file-listing:hover > ol {
+    color: inherit;
+}
+
+.file-listing a, .file-listing button {
+    font-size: 1em;
+    color: #999;
+}
+
+.file-listing:hover > ol a, .file-listing:hover > ol button {
     color: inherit;
 }
 

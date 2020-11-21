@@ -4,12 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+    <groupId>pl.matsuo.tools.mdnotes</groupId>
     <artifactId>mdnotes</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
     <parent>
         <groupId>pl.matsuo</groupId>
         <artifactId>matsuo-core-parent</artifactId>
-        <version>0.1.6-SNAPSHOT</version>
+        <version>0.1.7-SNAPSHOT</version>
         <relativePath>../matsuo-core/pom.xml</relativePath>
     </parent>
 
