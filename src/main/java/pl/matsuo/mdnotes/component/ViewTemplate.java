@@ -9,16 +9,16 @@ import static j2html.TagCreator.li;
 import static j2html.TagCreator.ol;
 import static j2html.TagCreator.span;
 import static pl.matsuo.core.util.collection.Pair.pair;
-import static pl.matsuo.core.util.desktop.BootstrapIcons.file_plus;
-import static pl.matsuo.core.util.desktop.BootstrapIcons.folder_plus;
-import static pl.matsuo.core.util.desktop.BootstrapIcons.gear;
+import static pl.matsuo.core.util.desktop.component.BootstrapIcons.file_plus;
+import static pl.matsuo.core.util.desktop.component.BootstrapIcons.folder_plus;
+import static pl.matsuo.core.util.desktop.component.BootstrapIcons.gear;
 
 import j2html.tags.ContainerTag;
 import j2html.tags.DomContent;
 import lombok.RequiredArgsConstructor;
-import pl.matsuo.core.util.desktop.IRequest;
 import pl.matsuo.core.util.desktop.component.FormComponents;
 import pl.matsuo.core.util.desktop.component.ViewComponents;
+import pl.matsuo.core.util.desktop.mvc.IRequest;
 import pl.matsuo.mdnotes.model.Folder;
 import pl.matsuo.mdnotes.model.MdNotesModel;
 

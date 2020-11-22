@@ -7,8 +7,8 @@ import static j2html.TagCreator.span;
 import j2html.tags.ContainerTag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import pl.matsuo.core.util.desktop.IRequest;
-import pl.matsuo.core.util.desktop.IView;
+import pl.matsuo.core.util.desktop.mvc.IRequest;
+import pl.matsuo.core.util.desktop.mvc.IView;
 import pl.matsuo.mdnotes.component.ViewTemplate;
 import pl.matsuo.mdnotes.model.MdNotesModel;
 
